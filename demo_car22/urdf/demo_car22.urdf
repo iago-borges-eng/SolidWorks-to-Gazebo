@@ -1,0 +1,149 @@
+<robot
+  name="demo_car22">
+  <link
+    name="base_link">
+    <inertial>
+      <origin
+        xyz="8.6736E-19 0.042753 0.0014737"
+        rpy="0 0 0" />
+      <mass
+        value="1" />
+      <inertia
+        ixx="0.00032204"
+        ixy="-2.1271E-20"
+        ixz="3.0622E-22"
+        iyy="0.0001277"
+        iyz="8.4706E-06"
+        izz="0.00044301" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://demo_car22/meshes/base_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.79216 0.81961 0.93333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://demo_car22/meshes/base_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <link
+    name="R_Link">
+    <inertial>
+      <origin
+        xyz="0 0.005 2.7756E-17"
+        rpy="0 0 0" />
+      <mass
+        value="0.1" />
+      <inertia
+        ixx="3.2296E-06"
+        ixy="-4.2812E-38"
+        ixz="1.3256E-37"
+        iyy="6.1353E-06"
+        iyz="4.1135E-22"
+        izz="3.2296E-06" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://demo_car22/meshes/R_Link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.79216 0.81961 0.93333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://demo_car22/meshes/R_Link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="Joint_R"
+    type="continuous">
+    <origin
+      xyz="0.051 0 0.0025"
+      rpy="1.5707963267949 1.5707963267949 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="R_Link" />
+    <axis
+      xyz="0 -1 0" />
+  </joint>
+  <link
+    name="L_Link">
+    <inertial>
+      <origin
+        xyz="0 -0.005 0"
+        rpy="0 0 0" />
+      <mass
+        value="0.1" />
+      <inertia
+        ixx="3.2296E-06"
+        ixy="-5.9881E-39"
+        ixz="2.0404E-37"
+        iyy="6.1353E-06"
+        iyz="4.108E-22"
+        izz="3.2296E-06" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://demo_car22/meshes/L_Link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.79216 0.81961 0.93333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://demo_car22/meshes/L_Link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="Joint_L"
+    type="continuous">
+    <origin
+      xyz="-0.051 0 0.0025"
+      rpy="1.5707963267949 1.5707963267949 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="L_Link" />
+    <axis
+      xyz="0 -1 0" />
+  </joint>
+</robot>
